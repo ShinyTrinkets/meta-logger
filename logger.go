@@ -22,13 +22,13 @@ type Logger interface {
 // Attrs are used for providing additional info in the log messages
 type Attrs map[string]interface{}
 
-// logBuilderType function builds new log instances
-type logBuilderType func(name string) Logger
+// LogBuilderType function builds new log instances
+type LogBuilderType func(name string) Logger
 
 // NewLogger builder function
-var NewLogger logBuilderType
+var NewLogger LogBuilderType
 
 // SetupLogBuilder helper is used for setting up the log builder function
-func SetupLogBuilder(b logBuilderType) {
+func SetupLogBuilder(b LogBuilderType) {
 	NewLogger = b
 }
